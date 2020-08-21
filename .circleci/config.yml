@@ -44,6 +44,9 @@ jobs:
     #      root: .
     #      paths:
     #        - archive
+      - add_ssh_keys:
+          fingerprints: 
+             - "af:34:f4:67:2b:c1:6d:86:28:9c:0c:d1:88:90:72:58"
             
       - run:
           name: spark submit
