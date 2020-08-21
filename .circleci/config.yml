@@ -51,7 +51,7 @@ jobs:
       - run:
           name: spark submit
           command: |
-             ssh ec2-user@52.90.58.147
+             ssh -o StrictHostKeyChecking=no ec2-user@52.90.58.147 
              spark-submit \
              --master spark://52.90.58.147:7077,3.88.224.41:7077 \
              --class org.apache.spark.examples.SparkPi /usr/local/spark/examples/jars/spark-examples_2.11-2.4.3.jar
