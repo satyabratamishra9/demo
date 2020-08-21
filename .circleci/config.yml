@@ -23,9 +23,9 @@ jobs:
             # use latest cache if no exact match found
             - v1-dependencies-
       
-      - run:
-          name: create package
-          command: mvn clean install -Dmaven.test.skip=true
+    #  - run:
+    #      name: create package
+    #      command: mvn clean install -Dmaven.test.skip=true
           
       - save_cache:
           key: v1-dependencies-{{ checksum "pom.xml" }}
@@ -40,10 +40,10 @@ jobs:
       #      ls -lart ~/repo/target
       #      cp -r ~/repo/target/*.jar ~/repo/archive/target/
             
-      - persist_to_workspace:
-          root: .
-          paths:
-            - archive
+    #  - persist_to_workspace:
+    #      root: .
+    #      paths:
+    #        - archive
             
       - run:
           name: spark submit
